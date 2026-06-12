@@ -1,0 +1,35 @@
+<div class="home-container">
+  <app-hero></app-hero>
+  
+  <section class="blog-cta">
+    <div class="blog-cta-content">
+      <div class="blog-info">
+        <h2>📚 Explore Technical Fundamentals</h2>
+        <p>Deep dives on Angular architecture, Agentic AI systems, and enterprise engineering practices. Learn from real-world experience and hands-on implementations.</p>
+        <a [routerLink]="['/blog']" class="btn btn-primary">
+          <span>Read the Blogs</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+      
+      <div class="profile-section">
+        <div class="profile-card">
+          <div class="image-wrapper">
+            <img src="./profile_pic.png" alt="Jagdish Kumar" class="profile-image">
+            <div class="status-badge">
+              <span class="badge-dot"></span>
+              Currently building Gen AI Integrations
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <app-featured-work></app-featured-work>
+  <app-experience></app-experience>
+  <app-skills></app-skills>
+  <app-contact></app-contact>
+</div>

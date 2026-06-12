@@ -1,0 +1,53 @@
+<section class="blog-list" id="blog-list">
+  <div class="container">
+    <div class="blog-header">
+      <h1>⚡ Explore Technical Fundamentals with Jagdish</h1>
+      <p class="blog-tagline">Deep dives on Angular, Agentic AI, and enterprise architecture</p>
+    </div>
+
+    <div class="blog-grid">
+      <article *ngFor="let blog of blogs" class="blog-card">
+        <div class="blog-meta">
+          <span class="topic-badge">{{ blog.topic }}</span>
+          <span class="read-time">{{ blog.readTime }}</span>
+        </div>
+        <h2 class="blog-title">{{ blog.title }}</h2>
+        <p class="blog-summary">{{ blog.summary }}</p>
+
+        <div class="course-container" *ngIf="blog.course">
+          <div class="course-header">
+            <h3>🎓 {{ blog.course.title }}</h3>
+            <p class="course-desc">{{ blog.course.description }}</p>
+            <div class="course-meta-tags">
+              <span class="meta-tag">⏱️ {{ blog.course.duration }}</span>
+              <span class="meta-tag">📈 {{ blog.course.level }}</span>
+            </div>
+          </div>
+
+          <div class="topics-list" *ngIf="blog.course.topics && blog.course.topics.length > 0">
+            <div class="topic-item" *ngFor="let topic of blog.course.topics">
+              <div class="topic-icon-wrapper" [innerHTML]="topic.vectorIcon"></div>
+              
+              <div class="topic-info">
+                <div class="topic-title-row">
+                  <h4>{{ topic.title }}</h4>
+                  <span class="topic-duration">{{ topic.duration }}</span>
+                </div>
+                <p class="topic-description">{{ topic.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="blog-footer">
+          <span class="publish-date">{{ blog.date }}</span>
+          <a [routerLink]="['/blog', blog.id]" class="read-more">
+            Read Article
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
